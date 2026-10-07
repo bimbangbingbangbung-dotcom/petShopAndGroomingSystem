@@ -21,9 +21,10 @@ function safeNext(next: string | undefined, fallback: string): string {
 
 export async function login(_prev: FormState, formData: FormData): Promise<FormState> {
   const parsed = loginSchema.safeParse({
-    email: formData.get("email"),
-    password: formData.get("password"),
-    next: formData.get("next"),
+    email: formData.get("email") ?? undefined,
+    password: formData.get("password") ?? undefined,
+    // formData.get() returns null when the field is absent — Zod wants undefined.
+    next: typeof formData.get("next") === "string" ? formData.get("next") : undefined,
   })
   if (!parsed.success) {
     return { error: firstMessage(parsed.error), fieldErrors: fieldErrors(parsed.error) }
