@@ -4,6 +4,7 @@ import { requireUser } from "@/lib/auth"
 import { getOrderByNumber, getOrderItems } from "@/lib/shop"
 import { formatPeso } from "@/lib/money"
 import { StatusBadge } from "@/components/status-badge"
+import { ClearCartOnReceipt } from "@/components/clear-cart"
 import { ArrowRightIcon, ReceiptIcon } from "@/components/icons"
 
 export const dynamic = "force-dynamic"
@@ -35,6 +36,7 @@ export default async function ReceiptPage({ params, searchParams }: Props) {
     <div className="page max-w-3xl py-10">
       {placed === "1" && (
         <div className="rounded-md border border-ok/30 bg-ok-bg px-4 py-4">
+          <ClearCartOnReceipt />
           <p className="font-display text-lg font-semibold text-ok">
             Order {order.order_number} is placed.
           </p>

@@ -44,8 +44,9 @@ export default async function BookingsPage({ searchParams }: Props) {
             Appointment {booked} is booked.
           </p>
           <p className="mt-1 text-sm text-ink">
-            Next step: watch the status here — requested bookings move to confirmed during shop
-            hours, Mon–Sat 9:00 am – 6:00 pm.
+            {appointments.find((a) => a.appointment_number === booked)?.status === "confirmed"
+              ? "You're paid and confirmed. Bring your pet on the booked date — we'll have the record ready."
+              : "Next step: watch the status here — requested bookings move to confirmed during shop hours, Mon–Sat 9:00 am – 6:00 pm."}
           </p>
           <div className="mt-3 flex flex-wrap gap-2">
             <Link href="/grooming" className="btn btn-primary btn-sm">
