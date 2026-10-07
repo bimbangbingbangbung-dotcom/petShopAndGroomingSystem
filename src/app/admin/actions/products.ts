@@ -105,7 +105,7 @@ export async function updateProduct(formData: FormData): Promise<void> {
     )
 
   revalidatePath("/admin/products")
-  redirect(`/admin/products/${id}/edit?saved=1")
+  redirect(`/admin/products/${id}/edit?saved=1`)
 }
 
 /** Soft delete only: items are hidden from the shop, never removed. */
