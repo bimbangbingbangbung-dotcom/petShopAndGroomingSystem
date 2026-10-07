@@ -154,8 +154,6 @@ export default async function AdminProductsPage({ searchParams }: Props) {
                       <form action={setProductActive}>
                         <input type="hidden" name="id" value={product.id} />
                         <input type="hidden" name="active" value={product.active === 1 ? "0" : "1"} />
-                        <input type="hidden" name="category" value={category} />
-                        <input type="hidden" name="showHidden" value={showHidden ? "1" : ""} />
                         <button type="submit" className="btn btn-ghost btn-sm">
                           {product.active === 1 ? "Hide" : "Restore"}
                         </button>
