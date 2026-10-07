@@ -47,15 +47,15 @@ export default async function AdminProductsPage({ searchParams }: Props) {
         </Link>
       </header>
 
-      {sp.error ? (
+      {error ? (
         <p
           role="alert"
           className="mt-6 rounded-md border border-danger/30 bg-danger-bg px-4 py-3 text-sm font-medium text-danger"
         >
-          {sp.error}
+          {error}
         </p>
       ) : null}
-      {sp.saved ? (
+      {saved ? (
         <p className="mt-6 rounded-md border border-ok/30 bg-ok-bg px-4 py-3 text-sm font-medium text-ok">
           Item saved.
         </p>
