@@ -142,15 +142,6 @@ export default function CheckoutPage() {
             </div>
             {errors?.paymentMethod && <p className="field-error mt-2">{errors.paymentMethod}</p>}
           </fieldset>
-
-          {state?.error && (
-            <p
-              role="alert"
-              className="mt-5 rounded-md border border-danger/30 bg-danger-bg px-4 py-3 text-sm font-medium text-danger"
-            >
-              {state.error}
-            </p>
-          )}
         </div>
 
         <aside className="card h-fit p-5 sm:p-6" aria-label="Order summary">
@@ -191,6 +182,15 @@ export default function CheckoutPage() {
             <span className="font-semibold">Total</span>
             <span className="price-tag text-2xl">{formatPeso(total)}</span>
           </div>
+
+          {state?.error && (
+            <p
+              role="alert"
+              className="mt-4 rounded-md border border-danger/30 bg-danger-bg px-4 py-3 text-sm font-medium text-danger"
+            >
+              {state.error}
+            </p>
+          )}
 
           <button
             type="submit"

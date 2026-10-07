@@ -104,14 +104,16 @@ export default async function BookingsPage({ searchParams }: Props) {
         </div>
       )}
 
-      <div className="mt-8 flex flex-wrap gap-3">
-        <Link href="/grooming" className="btn btn-primary">
-          Book another groom <ArrowRightIcon width={18} height={18} />
-        </Link>
-        <Link href="/products" className="btn btn-ghost">
-          Shop for your pet
-        </Link>
-      </div>
+      {appointments.length > 0 && (
+        <div className="mt-8 flex flex-wrap gap-3">
+          <Link href="/grooming" className="btn btn-primary">
+            Book another groom <ArrowRightIcon width={18} height={18} />
+          </Link>
+          <Link href="/products" className="btn btn-ghost">
+            Shop for your pet
+          </Link>
+        </div>
+      )}
     </div>
   )
 }
