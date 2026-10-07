@@ -1,0 +1,209 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------
+   Paws & Claws design tokens
+   Palette: grooming-lather whites, deep pine (care/trust), one warm
+   marigold accent used sparingly for prices and primary actions.
+   Type: Fraunces (display — soft, slightly wonky serif) + Archivo.
+------------------------------------------------------------------- */
+@theme {
+  --font-display: var(--font-fraunces), "Iowan Old Style", Georgia, serif;
+  --font-sans: var(--font-archivo), ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  --color-lather: #fbfcfa;
+  --color-mist: #eff3f0;
+  --color-line: #dce5e0;
+  --color-forest: #0e4d3c;
+  --color-forest-deep: #08342a;
+  --color-marigold: #f2a104;
+  --color-marigold-deep: #c98400;
+  --color-ink: #10201b;
+  --color-muted: #64756e;
+  --color-danger: #b3261e;
+  --color-danger-bg: #fbeeed;
+  --color-ok: #1a7f5a;
+  --color-ok-bg: #e9f4ef;
+  --color-info: #1f5f8b;
+  --color-info-bg: #e9f1f7;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-lather);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.55;
+    font-optical-sizing: auto;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    line-height: 1.12;
+    letter-spacing: -0.015em;
+    text-wrap: balance;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-forest);
+    outline-offset: 2px;
+    border-radius: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+}
+
+@layer components {
+  .page {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6;
+  }
+
+  .btn {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-md border px-4 py-2 text-sm font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .btn-primary {
+    @apply border-forest bg-forest text-white hover:bg-forest-deep;
+  }
+
+  .btn-accent {
+    @apply border-marigold-deep bg-marigold text-ink hover:bg-marigold-deep hover:text-white;
+  }
+
+  .btn-ghost {
+    @apply border-line bg-white text-ink hover:border-forest hover:text-forest;
+  }
+
+  .btn-danger {
+    @apply border-danger bg-white text-danger hover:bg-danger hover:text-white;
+  }
+
+  .btn-sm {
+    @apply min-h-9 px-3 py-1 text-xs;
+  }
+
+  .card {
+    @apply rounded-lg border border-line bg-white;
+  }
+
+  .field {
+    @apply flex flex-col gap-1.5;
+  }
+
+  .field > label {
+    @apply text-sm font-semibold text-ink;
+  }
+
+  .input {
+    @apply min-h-11 w-full rounded-md border border-line bg-white px-3 py-2 text-base text-ink placeholder:text-muted/70 focus:border-forest focus:outline-none;
+  }
+
+  .select {
+    @apply min-h-11 w-full rounded-md border border-line bg-white px-3 py-2 text-base text-ink focus:border-forest focus:outline-none;
+  }
+
+  .textarea {
+    @apply w-full rounded-md border border-line bg-white px-3 py-2 text-base text-ink placeholder:text-muted/70 focus:border-forest focus:outline-none;
+  }
+
+  .field-error {
+    @apply text-sm font-medium text-danger;
+  }
+
+  .help {
+    @apply text-sm text-muted;
+  }
+
+  /* Price chips read like the paper tags on a pet-shop pegboard. */
+  .price-tag {
+    @apply inline-flex items-baseline gap-1 font-display font-semibold text-forest;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 text-xs font-semibold;
+  }
+
+  .badge-ok {
+    @apply border-ok/30 bg-ok-bg text-ok;
+  }
+
+  .badge-warn {
+    @apply border-marigold-deep/40 bg-marigold/15 text-marigold-deep;
+  }
+
+  .badge-info {
+    @apply border-info/25 bg-info-bg text-info;
+  }
+
+  .badge-muted {
+    @apply border-line bg-mist text-muted;
+  }
+
+  .badge-danger {
+    @apply border-danger/30 bg-danger-bg text-danger;
+  }
+
+  .table {
+    @apply w-full border-collapse text-sm;
+  }
+
+  .table th {
+    @apply border-b border-line px-3 py-2 text-left font-semibold text-muted;
+  }
+
+  .table td {
+    @apply border-b border-line px-3 py-2.5 align-top;
+  }
+
+  .table-wrap {
+    @apply overflow-x-auto rounded-lg border border-line bg-white;
+  }
+
+  .nav-link {
+    @apply inline-flex min-h-10 items-center rounded-md px-3 py-1.5 text-sm font-medium text-ink hover:bg-mist hover:text-forest;
+  }
+
+  .nav-link[aria-current="page"] {
+    @apply text-forest;
+    box-shadow: inset 0 -2px 0 0 var(--color-marigold);
+  }
+
+  .eyebrow {
+    @apply text-sm font-semibold text-muted;
+  }
+
+  .section-title {
+    @apply text-2xl sm:text-3xl;
+  }
+
+  .prose-copy {
+    @apply max-w-[70ch] text-base leading-relaxed text-muted;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: #fff;
+  }
+}
