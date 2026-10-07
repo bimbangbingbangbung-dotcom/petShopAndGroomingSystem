@@ -98,18 +98,18 @@ export default async function AdminOrderDetailPage({ params, searchParams }: Pro
               </tbody>
               <tfoot>
                 <tr>
-                  <td colSpan={3} className="border-b-0 text-right font-semibold text-muted">
+                  <td colSpan={3} className="text-right font-semibold text-muted">
                     Subtotal
                   </td>
-                  <td className="border-b-0 whitespace-nowrap text-right font-semibold">
+                  <td className="whitespace-nowrap text-right font-semibold">
                     {formatPeso(order.subtotal_cents)}
                   </td>
                 </tr>
                 <tr>
-                  <td colSpan={3} className="border-b-0 text-right font-semibold text-muted">
+                  <td colSpan={3} className="text-right font-semibold text-muted">
                     Total
                   </td>
-                  <td className="border-b-0 whitespace-nowrap text-right">
+                  <td className="whitespace-nowrap text-right">
                     <span className="price-tag text-lg">{formatPeso(order.total_cents)}</span>
                   </td>
                 </tr>
