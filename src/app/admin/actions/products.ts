@@ -67,6 +67,7 @@ export async function createProduct(formData: FormData): Promise<void> {
       parsed.data.active,
     )
 
+  revalidatePath("/admin")
   revalidatePath("/admin/products")
   redirect("/admin/products?saved=1")
 }
@@ -123,5 +124,6 @@ export async function setProductActive(formData: FormData): Promise<void> {
     )
     .run(active, id)
 
+  revalidatePath("/admin")
   revalidatePath("/admin/products")
 }
