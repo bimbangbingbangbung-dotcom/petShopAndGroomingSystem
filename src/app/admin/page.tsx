@@ -110,7 +110,7 @@ export default function AdminDashboardPage() {
               </p>
             </div>
           ) : (
-            <div className="table-wrap overflow-hidden rounded-none border-0">
+            <div className="overflow-x-auto">
               <table className="table">
                 <thead>
                   <tr>
