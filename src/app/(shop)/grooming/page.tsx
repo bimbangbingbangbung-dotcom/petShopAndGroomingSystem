@@ -182,15 +182,11 @@ export default async function GroomingPage({ searchParams }: Props) {
                 <p className="help">Today up to 60 days ahead.</p>
               </div>
 
-              <div className="field sm:col-span-2">
-                <p className="text-sm font-semibold text-ink" id="payment-legend">
+              <fieldset className="sm:col-span-2">
+                <legend className="text-sm font-semibold text-ink">
                   How you&apos;d like to pay
-                </p>
-                <div
-                  className="mt-1 grid gap-3 sm:grid-cols-2"
-                  role="radiogroup"
-                  aria-labelledby="payment-legend"
-                >
+                </legend>
+                <div className="mt-2 grid gap-3 sm:grid-cols-2">
                   <label className="card flex cursor-pointer gap-3 p-4 has-[:checked]:border-forest has-[:checked]:bg-mist">
                     <input
                       type="radio"
@@ -225,7 +221,7 @@ export default async function GroomingPage({ searchParams }: Props) {
                     </span>
                   </label>
                 </div>
-              </div>
+              </fieldset>
             </div>
 
             <div className="mt-7 flex flex-wrap items-center gap-3 border-t border-line pt-5">
