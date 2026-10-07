@@ -65,32 +65,39 @@ export default async function GroomingPage({ searchParams }: Props) {
             <h2 className="text-xl">Choose a service</h2>
             <fieldset className="mt-4">
               <legend className="sr-only">Grooming service</legend>
-              <div className="grid gap-3 sm:grid-cols-2">
-                {services.map((service) => (
-                  <label
-                    key={service.id}
-                    className="card flex cursor-pointer gap-3 p-4 has-[:checked]:border-forest has-[:checked]:bg-mist"
-                  >
-                    <input
-                      type="radio"
-                      name="serviceId"
-                      value={service.id}
-                      required
-                      className="mt-1 h-5 w-5 shrink-0 accent-forest"
-                    />
-                    <span className="min-w-0">
-                      <span className="flex flex-wrap items-baseline justify-between gap-x-3">
-                        <span className="text-sm font-semibold">{service.name}</span>
-                        <span className="price-tag text-base">
-                          <span className="text-xs font-normal text-muted">from</span>
-                          {formatPesoWhole(quotePrice(service.base_price_cents, "xs"))}
+              {services.length === 0 ? (
+                <p className="help">
+                  No services are open for booking right now. Call the shop on (02) 8123 4567 and
+                  we&apos;ll fit your pet in.
+                </p>
+              ) : (
+                <div className="grid gap-3 sm:grid-cols-2">
+                  {services.map((service) => (
+                    <label
+                      key={service.id}
+                      className="card flex cursor-pointer gap-3 p-4 has-[:checked]:border-forest has-[:checked]:bg-mist"
+                    >
+                      <input
+                        type="radio"
+                        name="serviceId"
+                        value={service.id}
+                        required
+                        className="mt-1 h-5 w-5 shrink-0 accent-forest"
+                      />
+                      <span className="min-w-0">
+                        <span className="flex flex-wrap items-baseline justify-between gap-x-3">
+                          <span className="text-sm font-semibold">{service.name}</span>
+                          <span className="price-tag text-base">
+                            <span className="text-xs font-normal text-muted">from</span>
+                            {formatPesoWhole(quotePrice(service.base_price_cents, "xs"))}
+                          </span>
                         </span>
+                        <span className="mt-1 block text-xs text-muted">{service.description}</span>
                       </span>
-                      <span className="mt-1 block text-xs text-muted">{service.description}</span>
-                    </span>
-                  </label>
-                ))}
-              </div>
+                    </label>
+                  ))}
+                </div>
+              )}
               <p className="help mt-3">
                 The total depends on your pet&apos;s size — confirmed on the next step.
               </p>
