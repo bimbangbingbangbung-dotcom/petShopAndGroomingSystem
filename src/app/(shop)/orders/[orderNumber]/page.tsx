@@ -16,7 +16,7 @@ const STEPS = [
   {
     key: "pending",
     title: "Order placed",
-    help: "We have your order and the items set aside.",
+    help: "We have your order and the items set aside — payment comes next.",
   },
   {
     key: "paid",
