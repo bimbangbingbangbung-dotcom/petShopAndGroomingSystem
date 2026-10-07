@@ -62,7 +62,7 @@ export function AdminNav() {
             <Link
               key={item.href}
               href={item.href}
-              className="nav-link shrink-0 gap-2 whitespace-nowrap"
+              className="nav-link shrink-0 gap-2 whitespace-nowrap hover:bg-white"
               aria-current={isCurrent(pathname, item.href) ? "page" : undefined}
             >
               <item.icon width={18} height={18} />
@@ -91,7 +91,7 @@ export function AdminNav() {
             <Link
               key={item.href}
               href={item.href}
-              className="nav-link w-full gap-2.5"
+              className="nav-link w-full gap-2.5 hover:bg-white"
               aria-current={isCurrent(pathname, item.href) ? "page" : undefined}
             >
               <item.icon width={18} height={18} />
