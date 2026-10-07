@@ -84,7 +84,7 @@ export default function RegisterPage({ searchParams }: Props) {
               minLength={8}
               className="input"
               aria-invalid={errors?.password ? true : undefined}
-              aria-describedby={errors?.password ? "password-error" : undefined}
+              aria-describedby={errors?.password ? "password-error" : "password-help"}
             />
             <p id="password-help" className="help">
               At least 8 characters.
