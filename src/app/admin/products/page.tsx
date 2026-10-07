@@ -20,6 +20,8 @@ export default async function AdminProductsPage({ searchParams }: Props) {
   const sp = await searchParams
   const category = typeof sp.category === "string" ? sp.category : ""
   const showHidden = sp.showHidden === "1"
+  const error = typeof sp.error === "string" ? sp.error : ""
+  const saved = sp.saved === "1"
 
   const all = listProducts({ includeInactive: true })
   const categoryList = [...new Set(all.map((product) => product.category))].sort((a, b) =>
