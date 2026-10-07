@@ -51,9 +51,9 @@ export async function login(_prev: FormState, formData: FormData): Promise<FormS
 
 export async function register(_prev: FormState, formData: FormData): Promise<FormState> {
   const parsed = registerSchema.safeParse({
-    name: formData.get("name"),
-    email: formData.get("email"),
-    password: formData.get("password"),
+    name: formData.get("name") ?? undefined,
+    email: formData.get("email") ?? undefined,
+    password: formData.get("password") ?? undefined,
   })
   if (!parsed.success) {
     return { error: firstMessage(parsed.error), fieldErrors: fieldErrors(parsed.error) }
