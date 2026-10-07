@@ -85,7 +85,11 @@ export default async function AdminOrdersPage({ searchParams }: Props) {
             <Link
               key={filter.value || "all"}
               href={filter.value ? `/admin/orders?status=${filter.value}` : "/admin/orders"}
-              className={active ? "badge badge-info" : "badge badge-muted hover:border-forest hover:text-forest"}
+              className={
+                active
+                  ? "badge badge-info min-h-11 px-4 text-sm"
+                  : "badge badge-muted min-h-11 px-4 text-sm hover:border-forest hover:text-forest"
+              }
               aria-current={active ? "page" : undefined}
             >
               {filter.label}

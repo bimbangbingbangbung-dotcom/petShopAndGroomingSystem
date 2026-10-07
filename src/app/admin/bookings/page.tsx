@@ -106,7 +106,9 @@ export default async function AdminBookingsPage({ searchParams }: Props) {
               key={filter.value || "all"}
               href={filter.value ? `/admin/bookings?status=${filter.value}` : "/admin/bookings"}
               className={
-                active ? "badge badge-info" : "badge badge-muted hover:border-forest hover:text-forest"
+                active
+                  ? "badge badge-info min-h-11 px-4 text-sm"
+                  : "badge badge-muted min-h-11 px-4 text-sm hover:border-forest hover:text-forest"
               }
               aria-current={active ? "page" : undefined}
             >

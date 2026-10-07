@@ -21,10 +21,10 @@ const NEXT_STATUS: Record<OrderStatus, OrderStatus[]> = {
 }
 
 const ACTION_LABELS: Record<OrderStatus, { label: string; cls: string }> = {
-  paid: { label: "Mark paid", cls: "btn btn-primary btn-sm" },
-  fulfilled: { label: "Mark fulfilled", cls: "btn btn-primary btn-sm" },
-  cancelled: { label: "Cancel and restock", cls: "btn btn-danger btn-sm" },
-  pending: { label: "Reopen as pending", cls: "btn btn-ghost btn-sm" },
+  paid: { label: "Mark paid", cls: "btn btn-primary" },
+  fulfilled: { label: "Mark fulfilled", cls: "btn btn-primary" },
+  cancelled: { label: "Cancel and restock", cls: "btn btn-danger" },
+  pending: { label: "Reopen as pending", cls: "btn btn-ghost" },
 }
 
 /** "Mon D, YYYY, h:mm am" — matches the timestamps shown across the admin. */
