@@ -118,9 +118,10 @@ export default function CheckoutPage() {
             </div>
           </div>
 
-          <fieldset className="mt-6 border-t border-line pt-5">
-            <legend className="text-sm font-semibold text-ink">Payment method</legend>
-            <div className="mt-3 grid gap-3 sm:grid-cols-3">
+          <h2 className="mt-6 border-t border-line pt-5 text-xl">Payment method</h2>
+          <fieldset className="mt-3">
+            <legend className="sr-only">Payment method</legend>
+            <div className="grid gap-3 sm:grid-cols-3">
               {PAYMENT_OPTIONS.map((option) => (
                 <label
                   key={option.value}
