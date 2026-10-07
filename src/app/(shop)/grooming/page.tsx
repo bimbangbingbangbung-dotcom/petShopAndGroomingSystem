@@ -98,9 +98,11 @@ export default async function GroomingPage({ searchParams }: Props) {
                   ))}
                 </div>
               )}
-              <p className="help mt-3">
-                The total depends on your pet&apos;s size — confirmed on the next step.
-              </p>
+              {services.length > 0 && (
+                <p className="help mt-3">
+                  The total depends on your pet&apos;s size — confirmed on the next step.
+                </p>
+              )}
             </fieldset>
 
             <h2 className="mt-8 border-t border-line pt-6 text-xl">About your pet</h2>
@@ -225,7 +227,7 @@ export default async function GroomingPage({ searchParams }: Props) {
             </div>
 
             <div className="mt-7 flex flex-wrap items-center gap-3 border-t border-line pt-5">
-              <button type="submit" className="btn btn-accent px-6">
+              <button type="submit" className="btn btn-accent px-6" disabled={services.length === 0}>
                 <ScissorsIcon width={18} height={18} /> Book this slot
               </button>
               <Link href="/grooming/bookings" className="btn btn-ghost">
