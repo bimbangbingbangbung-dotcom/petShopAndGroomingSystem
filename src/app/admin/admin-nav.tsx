@@ -101,7 +101,7 @@ export function AdminNav() {
         </nav>
 
         <div className="flex flex-col gap-2 border-t border-line p-3">
-          <Link href="/" className="nav-link w-full gap-2">
+          <Link href="/" className="nav-link w-full gap-2 hover:bg-white">
             <ArrowRightIcon width={18} height={18} className="rotate-180" />
             Back to shop
           </Link>
