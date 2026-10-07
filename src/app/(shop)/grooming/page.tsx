@@ -2,7 +2,7 @@ import Link from "next/link"
 import { listServices, PET_SPECIES, quotePrice, SIZE_LABELS } from "@/lib/grooming"
 import { formatPesoWhole } from "@/lib/money"
 import { book } from "./actions/book"
-import { CalendarIcon, CheckIcon, ScissorsIcon } from "@/components/icons"
+import { ArrowRightIcon, CalendarIcon, CheckIcon, ScissorsIcon } from "@/components/icons"
 
 export const dynamic = "force-dynamic"
 
@@ -274,7 +274,7 @@ export default async function GroomingPage({ searchParams }: Props) {
                 </li>
               </ul>
               <Link href="/grooming/bookings" className="btn btn-ghost mt-4 w-full">
-                See your bookings <ArrowLink />
+                See your bookings <ArrowRightIcon width={18} height={18} />
               </Link>
             </div>
           </aside>
