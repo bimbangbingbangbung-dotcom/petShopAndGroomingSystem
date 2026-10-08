@@ -5,6 +5,7 @@ import { getOrderById, getOrderItems } from "@/lib/shop"
 import { formatPeso } from "@/lib/money"
 import { updateOrderStatus } from "@/app/admin/actions/orders"
 import { StatusBadge } from "@/components/status-badge"
+import { ConfirmButton } from "@/components/confirm-button"
 
 export const dynamic = "force-dynamic"
 
@@ -160,9 +161,18 @@ export default async function AdminOrderDetailPage({ params, searchParams }: Pro
                     <form key={next} action={updateOrderStatus}>
                       <input type="hidden" name="id" value={order.id} />
                       <input type="hidden" name="status" value={next} />
-                      <button type="submit" className={ACTION_LABELS[next].cls}>
-                        {ACTION_LABELS[next].label}
-                      </button>
+                      {next === "cancelled" ? (
+                        <ConfirmButton
+                          message={`Cancel order #${order.id}? Its items go back in stock and the customer sees it as cancelled. This cannot be undone.`}
+                          className={ACTION_LABELS[next].cls}
+                        >
+                          {ACTION_LABELS[next].label}
+                        </ConfirmButton>
+                      ) : (
+                        <button type="submit" className={ACTION_LABELS[next].cls}>
+                          {ACTION_LABELS[next].label}
+                        </button>
+                      )}
                     </form>
                   ))}
                 </div>

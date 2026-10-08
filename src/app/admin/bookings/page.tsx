@@ -4,6 +4,7 @@ import { listAllAppointments, SIZE_LABELS } from "@/lib/grooming"
 import { formatPeso } from "@/lib/money"
 import { updateAppointmentStatus } from "@/app/admin/actions/appointments"
 import { StatusBadge } from "@/components/status-badge"
+import { ConfirmButton } from "@/components/confirm-button"
 
 export const dynamic = "force-dynamic"
 
@@ -161,9 +162,18 @@ export default async function AdminBookingsPage({ searchParams }: Props) {
                         <form key={action.to} action={updateAppointmentStatus}>
                           <input type="hidden" name="id" value={appointment.id} />
                           <input type="hidden" name="status" value={action.to} />
-                          <button type="submit" className={action.cls}>
-                            {action.label}
-                          </button>
+                          {action.to === "cancelled" ? (
+                            <ConfirmButton
+                              message={`Cancel ${appointment.pet_name}'s ${appointment.service_name} booking? This cannot be undone.`}
+                              className={action.cls}
+                            >
+                              {action.label}
+                            </ConfirmButton>
+                          ) : (
+                            <button type="submit" className={action.cls}>
+                              {action.label}
+                            </button>
+                          )}
                         </form>
                       ))}
                     </div>
