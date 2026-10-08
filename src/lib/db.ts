@@ -28,6 +28,7 @@ export interface Product {
   price_cents: number
   stock: number
   active: number
+  image: string
   created_at: string
   updated_at: string
 }
@@ -126,6 +127,7 @@ CREATE TABLE IF NOT EXISTS products (
   price_cents INTEGER NOT NULL CHECK (price_cents >= 0),
   stock       INTEGER NOT NULL DEFAULT 0 CHECK (stock >= 0),
   active      INTEGER NOT NULL DEFAULT 1,
+  image       TEXT    NOT NULL DEFAULT '',
   created_at  TEXT    NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%fZ','now')),
   updated_at  TEXT    NOT NULL DEFAULT (strftime('%Y-%m-%dT%H:%M:%fZ','now'))
 );
