@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" role="img">
+  <title>Stack of absorbent pet pee pads</title>
+  <rect width="320" height="240" fill="#EFF3F0"/>
+  <ellipse cx="160" cy="196" rx="96" ry="8" fill="#0E4D3C" opacity=".06"/>
+  <rect x="70" y="136" width="184" height="56" rx="10" fill="#CFE3D9"/>
+  <rect x="75" y="141" width="174" height="46" rx="7" fill="#FBFCFA"/>
+  <g transform="rotate(-3 170 124)">
+    <rect x="82" y="110" width="184" height="56" rx="10" fill="#CFE3D9"/>
+    <rect x="87" y="115" width="174" height="46" rx="7" fill="#FBFCFA"/>
+  </g>
+  <rect x="74" y="86" width="180" height="56" rx="10" fill="#CFE3D9"/>
+  <rect x="79" y="91" width="170" height="46" rx="7" fill="#FBFCFA"/>
+  <g fill="#CFE3D9">
+    <circle cx="104" cy="103" r="3"/>
+    <circle cx="136" cy="103" r="3"/>
+    <circle cx="168" cy="103" r="3"/>
+    <circle cx="200" cy="103" r="3"/>
+    <circle cx="232" cy="103" r="3"/>
+    <circle cx="104" cy="114" r="3"/>
+    <circle cx="136" cy="114" r="3"/>
+    <circle cx="168" cy="114" r="3"/>
+    <circle cx="200" cy="114" r="3"/>
+    <circle cx="232" cy="114" r="3"/>
+    <circle cx="104" cy="125" r="3"/>
+    <circle cx="136" cy="125" r="3"/>
+    <circle cx="168" cy="125" r="3"/>
+    <circle cx="200" cy="125" r="3"/>
+    <circle cx="232" cy="125" r="3"/>
+  </g>
+  <rect x="210" y="74" width="36" height="16" rx="8" fill="#F2A104"/>
+</svg>

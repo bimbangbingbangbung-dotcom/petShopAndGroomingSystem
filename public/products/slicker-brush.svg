@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" role="img">
+  <title>Grooming slicker brush with fine bristles</title>
+  <rect width="320" height="240" fill="#EFF3F0"/>
+  <ellipse cx="160" cy="196" rx="96" ry="8" fill="#0E4D3C" opacity=".06"/>
+  <rect x="56" y="114" width="88" height="26" rx="13" fill="#0E4D3C"/>
+  <rect x="64" y="118" width="30" height="18" rx="9" fill="#F2A104"/>
+  <rect x="140" y="120" width="16" height="14" fill="#08342A"/>
+  <rect x="152" y="96" width="100" height="58" rx="14" fill="#0E4D3C"/>
+  <circle cx="176" cy="114" r="7" fill="#F2A104"/>
+  <circle cx="226" cy="114" r="7" fill="#F2A104"/>
+  <rect x="158" y="132" width="88" height="16" rx="8" fill="#CFE3D9"/>
+  <g stroke="#08342A" stroke-width="4" stroke-linecap="round" fill="none">
+    <path d="M164 154l-4 32"/>
+    <path d="M176 154l-2 32"/>
+    <path d="M188 154l-1 32"/>
+    <path d="M200 154v32"/>
+    <path d="M212 154l1 32"/>
+    <path d="M224 154l2 32"/>
+    <path d="M236 154l4 32"/>
+  </g>
+</svg>

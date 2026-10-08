@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" role="img">
+  <title>Flea and tick spot-on applicator with droplet</title>
+  <rect width="320" height="240" fill="#EFF3F0"/>
+  <ellipse cx="160" cy="196" rx="72" ry="8" fill="#0E4D3C" opacity=".06"/>
+  <g transform="rotate(-8 160 132)">
+    <rect x="144" y="58" width="32" height="22" rx="6" fill="#F2A104"/>
+    <rect x="150" y="80" width="20" height="20" fill="#08342A"/>
+    <rect x="124" y="98" width="72" height="76" rx="18" fill="#0E4D3C"/>
+    <rect x="124" y="122" width="72" height="28" fill="#CFE3D9"/>
+    <circle cx="160" cy="136" r="8" fill="#F2A104"/>
+  </g>
+  <path d="M216 76c12 16 18 26 18 34a18 18 0 0 1-36 0c0-8 6-18 18-34z" fill="#F2A104"/>
+  <circle cx="209" cy="112" r="5" fill="#FBFCFA"/>
+</svg>
