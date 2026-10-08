@@ -4,6 +4,7 @@ import { getProductBySlug, listProducts } from "@/lib/shop"
 import { formatPeso } from "@/lib/money"
 import { AddToCart } from "@/components/add-to-cart"
 import { ProductCard } from "@/components/product-card"
+import { ProductImage } from "@/components/product-image"
 
 export const dynamic = "force-dynamic"
 
@@ -46,7 +47,14 @@ export default async function ProductPage({ params }: Props) {
 
       <div className="mt-6 grid gap-8 lg:grid-cols-[1.4fr_1fr]">
         <div>
-          <p className="eyebrow">{product.category}</p>
+          <div className="aspect-[4/3] w-full max-w-[560px] overflow-hidden rounded-lg border border-line bg-mist">
+            <ProductImage
+              name={product.name}
+              category={product.category}
+              image={product.image}
+            />
+          </div>
+          <p className="eyebrow mt-7">{product.category}</p>
           <h1 className="mt-1 text-3xl sm:text-4xl">{product.name}</h1>
           <p className="prose-copy mt-4">{product.description}</p>
           <p className="mt-6 text-sm text-muted">
