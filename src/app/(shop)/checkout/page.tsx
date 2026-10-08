@@ -5,6 +5,7 @@ import Link from "next/link"
 import { placeOrder } from "@/app/(shop)/actions/checkout"
 import { cartTotal, readCart, subscribeToCart, type CartLine } from "@/lib/cart-client"
 import { formatPeso } from "@/lib/money"
+import { ProductImage } from "@/components/product-image"
 
 const PAYMENT_OPTIONS = [
   {
@@ -154,10 +155,15 @@ export default function CheckoutPage() {
             <ul className="mt-4 divide-y divide-line border-t border-line">
               {lines.map((line) => (
                 <li key={line.productId} className="flex items-start justify-between gap-3 py-3">
-                  <span className="min-w-0">
-                    <span className="block text-sm font-medium">{line.name}</span>
-                    <span className="block text-xs text-muted">
-                      {line.quantity} × {formatPeso(line.priceCents)}
+                  <span className="flex min-w-0 items-start gap-3">
+                    <span className="block h-12 w-16 shrink-0 overflow-hidden rounded border border-line bg-mist">
+                      <ProductImage name={line.name} category="" image={line.image} compact />
+                    </span>
+                    <span className="min-w-0">
+                      <span className="block text-sm font-medium">{line.name}</span>
+                      <span className="block text-xs text-muted">
+                        {line.quantity} × {formatPeso(line.priceCents)}
+                      </span>
                     </span>
                   </span>
                   <span className="text-sm font-semibold tabular-nums">

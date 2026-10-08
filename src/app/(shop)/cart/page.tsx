@@ -11,6 +11,7 @@ import {
   type CartLine,
 } from "@/lib/cart-client"
 import { formatPeso } from "@/lib/money"
+import { ProductImage } from "@/components/product-image"
 import { ArrowRightIcon, CartIcon, MinusIcon, PlusIcon, TrashIcon } from "@/components/icons"
 
 export default function CartPage() {
@@ -58,6 +59,9 @@ export default function CartPage() {
           <div className="card divide-y divide-line">
             {lines.map((line) => (
               <div key={line.productId} className="flex flex-wrap items-center gap-4 p-4 sm:p-5">
+                <span className="block h-14 w-20 shrink-0 overflow-hidden rounded-md border border-line bg-mist">
+                  <ProductImage name={line.name} category="" image={line.image} compact />
+                </span>
                 <div className="min-w-0 flex-1">
                   <Link
                     href={`/products?q=${encodeURIComponent(line.name)}`}
