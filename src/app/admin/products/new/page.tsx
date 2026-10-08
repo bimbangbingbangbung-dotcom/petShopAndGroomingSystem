@@ -76,6 +76,21 @@ export default async function NewProductPage({ searchParams }: Props) {
         </div>
 
         <div className="field">
+          <label htmlFor="image">Picture</label>
+          <input
+            id="image"
+            name="image"
+            type="text"
+            className="input"
+            placeholder="/products/bone-toy.svg"
+          />
+          <p className="help">
+            Optional. A path like /products/bone-toy.svg or a full https:// image URL. Leave it
+            blank and the shop shows a tidy category placeholder instead.
+          </p>
+        </div>
+
+        <div className="field">
           <label htmlFor="price">Price</label>
           <input
             id="price"

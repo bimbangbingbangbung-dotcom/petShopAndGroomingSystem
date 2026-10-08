@@ -41,6 +41,7 @@ function readForm(formData: FormData) {
     price: formData.get("price"),
     stock: formData.get("stock"),
     active: formData.get("active") === "1" ? 1 : 0,
+    image: formData.get("image") ?? "",
   })
 }
 
@@ -54,8 +55,8 @@ export async function createProduct(formData: FormData): Promise<void> {
 
   db()
     .prepare(
-      `INSERT INTO products (name, slug, category, description, price_cents, stock, active)
-       VALUES (?, ?, ?, ?, ?, ?, ?)`,
+      `INSERT INTO products (name, slug, category, description, price_cents, stock, active, image)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
     )
     .run(
       parsed.data.name,
@@ -65,6 +66,7 @@ export async function createProduct(formData: FormData): Promise<void> {
       parsed.data.price,
       parsed.data.stock,
       parsed.data.active,
+      parsed.data.image,
     )
 
   revalidatePath("/admin")
@@ -90,7 +92,7 @@ export async function updateProduct(formData: FormData): Promise<void> {
     .prepare(
       `UPDATE products
          SET name = ?, slug = ?, category = ?, description = ?, price_cents = ?, stock = ?,
-             active = ?, updated_at = strftime('%Y-%m-%dT%H:%M:%fZ','now')
+             active = ?, image = ?, updated_at = strftime('%Y-%m-%dT%H:%M:%fZ','now')
        WHERE id = ?`,
     )
     .run(
@@ -101,6 +103,7 @@ export async function updateProduct(formData: FormData): Promise<void> {
       parsed.data.price,
       parsed.data.stock,
       parsed.data.active,
+      parsed.data.image,
       id,
     )
 
