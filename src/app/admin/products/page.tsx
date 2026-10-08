@@ -4,6 +4,7 @@ import { formatPeso } from "@/lib/money"
 import { setProductActive } from "@/app/admin/actions/products"
 import { PlusIcon } from "@/components/icons"
 import { ProductImage } from "@/components/product-image"
+import { ConfirmButton } from "@/components/confirm-button"
 
 export const dynamic = "force-dynamic"
 
@@ -172,9 +173,18 @@ export default async function AdminProductsPage({ searchParams }: Props) {
                       <form action={setProductActive}>
                         <input type="hidden" name="id" value={product.id} />
                         <input type="hidden" name="active" value={product.active === 1 ? "0" : "1"} />
-                        <button type="submit" className="btn btn-ghost btn-sm">
-                          {product.active === 1 ? "Hide" : "Restore"}
-                        </button>
+                        {product.active === 1 ? (
+                          <ConfirmButton
+                            message={`Delete "${product.name}" from the shop? It stops appearing to customers. You can restore it later from "Show hidden items".`}
+                            className="btn btn-ghost btn-sm"
+                          >
+                            Delete
+                          </ConfirmButton>
+                        ) : (
+                          <button type="submit" className="btn btn-ghost btn-sm">
+                            Restore
+                          </button>
+                        )}
                       </form>
                     </div>
                   </td>
