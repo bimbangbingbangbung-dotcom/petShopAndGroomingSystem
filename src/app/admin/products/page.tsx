@@ -3,6 +3,7 @@ import { listProducts } from "@/lib/shop"
 import { formatPeso } from "@/lib/money"
 import { setProductActive } from "@/app/admin/actions/products"
 import { PlusIcon } from "@/components/icons"
+import { ProductImage } from "@/components/product-image"
 
 export const dynamic = "force-dynamic"
 
@@ -121,15 +122,30 @@ export default async function AdminProductsPage({ searchParams }: Props) {
               {products.map((product) => (
                 <tr key={product.id}>
                   <td>
-                    <Link
-                      href={`/admin/products/${product.id}/edit`}
-                      className="font-medium text-forest hover:underline"
-                    >
-                      {product.name}
-                    </Link>
-                    {product.active === 0 ? (
-                      <span className="block text-xs text-muted">Hidden from the shop</span>
-                    ) : null}
+                    <div className="flex items-center gap-3">
+                      <span
+                        aria-hidden="true"
+                        className="block h-10 w-14 shrink-0 overflow-hidden rounded border border-line"
+                      >
+                        <ProductImage
+                          name={product.name}
+                          category={product.category}
+                          image={product.image}
+                          compact
+                        />
+                      </span>
+                      <span>
+                        <Link
+                          href={`/admin/products/${product.id}/edit`}
+                          className="font-medium text-forest hover:underline"
+                        >
+                          {product.name}
+                        </Link>
+                        {product.active === 0 ? (
+                          <span className="block text-xs text-muted">Hidden from the shop</span>
+                        ) : null}
+                      </span>
+                    </div>
                   </td>
                   <td className="whitespace-nowrap text-muted">{product.category}</td>
                   <td className="whitespace-nowrap">

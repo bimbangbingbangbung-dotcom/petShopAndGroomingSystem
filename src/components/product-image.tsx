@@ -6,6 +6,8 @@ interface Props {
   image?: string | null
   /** Extra classes for the inner visual (e.g. the card's hover zoom). */
   className?: string
+  /** Icon-only fallback for tight spaces like table thumbnails. */
+  compact?: boolean
 }
 
 /**
@@ -13,7 +15,7 @@ interface Props {
  * tidy category placeholder so admin-added items still look intentional.
  * Render it inside a fixed-aspect, overflow-hidden box.
  */
-export function ProductImage({ name, category, image, className = "" }: Props) {
+export function ProductImage({ name, category, image, className = "", compact = false }: Props) {
   const extra = className ? ` ${className}` : ""
 
   if (image) {
@@ -26,6 +28,18 @@ export function ProductImage({ name, category, image, className = "" }: Props) {
         loading="lazy"
         className={`h-full w-full object-cover${extra}`}
       />
+    )
+  }
+
+  if (compact) {
+    return (
+      <div
+        role="img"
+        aria-label={name}
+        className={`flex h-full w-full items-center justify-center bg-mist text-forest/40${extra}`}
+      >
+        <BoxIcon className="size-5" />
+      </div>
     )
   }
 
