@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" role="img">
+  <title>Braided rope tug toy with knot</title>
+  <rect width="320" height="240" fill="#EFF3F0"/>
+  <ellipse cx="160" cy="196" rx="96" ry="8" fill="#0E4D3C" opacity=".06"/>
+  <g stroke-linecap="round" fill="none">
+    <path d="M58 150L38 134" stroke="#F2A104" stroke-width="7"/>
+    <path d="M58 150L36 152" stroke="#0E4D3C" stroke-width="7"/>
+    <path d="M58 150L40 170" stroke="#F2A104" stroke-width="7"/>
+    <path d="M262 150L282 134" stroke="#F2A104" stroke-width="7"/>
+    <path d="M262 150L284 152" stroke="#0E4D3C" stroke-width="7"/>
+    <path d="M262 150L280 170" stroke="#F2A104" stroke-width="7"/>
+  </g>
+  <path d="M70 150h180" stroke="#CFE3D9" stroke-width="28" stroke-linecap="round" fill="none"/>
+  <g stroke="#0E4D3C" stroke-width="5" stroke-linecap="round" fill="none">
+    <path d="M74 139l12 22"/>
+    <path d="M94 139l12 22"/>
+    <path d="M114 139l12 22"/>
+    <path d="M208 139l12 22"/>
+    <path d="M228 139l12 22"/>
+    <path d="M248 139l12 22"/>
+  </g>
+  <rect x="138" y="122" width="56" height="56" rx="14" transform="rotate(45 166 150)" fill="#0E4D3C"/>
+  <circle cx="166" cy="150" r="12" fill="#F2A104"/>
+</svg>

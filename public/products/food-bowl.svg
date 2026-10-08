@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" role="img">
+  <title>Ceramic pet food bowl filled with kibble</title>
+  <rect width="320" height="240" fill="#EFF3F0"/>
+  <ellipse cx="160" cy="196" rx="92" ry="8" fill="#0E4D3C" opacity=".06"/>
+  <path d="M66 124l30 60c4 6 10 8 18 8h92c8 0 14-2 18-8l30-60z" fill="#0E4D3C"/>
+  <ellipse cx="160" cy="124" rx="94" ry="26" fill="#08342A"/>
+  <ellipse cx="160" cy="126" rx="78" ry="19" fill="#CFE3D9"/>
+  <path d="M79 150L241 150L233 166L87 166Z" fill="#CFE3D9"/>
+  <circle cx="160" cy="158" r="8" fill="#F2A104"/>
+  <g fill="#C98400">
+    <circle cx="116" cy="120" r="8"/>
+    <circle cx="134" cy="112" r="10"/>
+    <circle cx="156" cy="106" r="11"/>
+    <circle cx="180" cy="110" r="10"/>
+    <circle cx="200" cy="118" r="8"/>
+    <circle cx="146" cy="124" r="9"/>
+    <circle cx="170" cy="124" r="9"/>
+    <circle cx="190" cy="128" r="7"/>
+  </g>
+</svg>

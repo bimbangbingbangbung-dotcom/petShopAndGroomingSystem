@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" role="img">
+  <title>Adjustable nylon pet collar with tag</title>
+  <rect width="320" height="240" fill="#EFF3F0"/>
+  <ellipse cx="160" cy="196" rx="76" ry="8" fill="#0E4D3C" opacity=".06"/>
+  <circle cx="160" cy="112" r="60" fill="none" stroke="#0E4D3C" stroke-width="24"/>
+  <g fill="#08342A">
+    <circle cx="160" cy="52" r="3.5"/>
+    <circle cx="202" cy="70" r="3.5"/>
+    <circle cx="220" cy="112" r="3.5"/>
+    <circle cx="202" cy="154" r="3.5"/>
+    <circle cx="160" cy="172" r="3.5"/>
+    <circle cx="118" cy="154" r="3.5"/>
+    <circle cx="100" cy="112" r="3.5"/>
+    <circle cx="118" cy="70" r="3.5"/>
+  </g>
+  <rect x="142" y="36" width="36" height="30" rx="7" fill="#F2A104"/>
+  <rect x="150" y="43" width="20" height="16" rx="4" fill="#EFF3F0"/>
+  <circle cx="160" cy="158" r="8" fill="none" stroke="#C98400" stroke-width="5"/>
+  <circle cx="160" cy="176" r="16" fill="#F2A104"/>
+  <circle cx="160" cy="167" r="4" fill="#EFF3F0"/>
+</svg>
