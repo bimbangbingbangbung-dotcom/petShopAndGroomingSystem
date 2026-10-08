@@ -222,6 +222,22 @@ const PRODUCT_SEED: Array<[string, string, string, string, number, number]> = [
   ["Grooming Slicker Brush", "grooming-slicker-brush", "Care", "Fine wire bristles with comfort grip handle.", 17900, 28],
 ]
 
+/** Illustrations shipped with the app, keyed by product slug (applied when no admin image is set). */
+const PRODUCT_IMAGES: Record<string, string> = {
+  "premium-adult-dog-food-3kg": "/products/dog-food-bag.svg",
+  "kitten-tuna-pouches-12s": "/products/cat-pouches.svg",
+  "salmon-cat-kibble-1-5kg": "/products/cat-kibble-bag.svg",
+  "squeaky-bone-toy": "/products/bone-toy.svg",
+  "feather-wand-teaser": "/products/feather-wand.svg",
+  "rope-tug-toy": "/products/rope-toy.svg",
+  "ceramic-food-bowl": "/products/food-bowl.svg",
+  "adjustable-nylon-collar": "/products/collar.svg",
+  "retractable-leash-5m": "/products/leash.svg",
+  "absorbent-pee-pads-50s": "/products/pee-pads.svg",
+  "flea-tick-spot-on": "/products/spot-on.svg",
+  "grooming-slicker-brush": "/products/slicker-brush.svg",
+}
+
 const SERVICE_SEED: Array<[string, string, string, number]> = [
   ["Bath & Brush", "bath-brush", "Warm-water bath, blow dry, full brush-out and cologne.", 35000],
   ["Full Groom", "full-groom", "Bath, haircut to breed shape, nails, ears and sanitary trim.", 70000],
@@ -239,8 +255,23 @@ function open(): Database.Database {
   db.pragma("journal_mode = WAL")
   db.pragma("foreign_keys = ON")
   db.exec(SCHEMA)
+
+  // Migration: databases created before the `image` column existed.
+  const columns = db.prepare("PRAGMA table_info(products)").all() as Array<{ name: string }>
+  const addedImage = !columns.some((c) => c.name === "image")
+  if (addedImage) {
+    db.exec("ALTER TABLE products ADD COLUMN image TEXT NOT NULL DEFAULT ''")
+    backfillProductImages(db) // one-time: existing rows adopt the bundled illustrations
+  }
+
   seed(db)
   return db
+}
+
+/** Point seeded products at their bundled illustration where none is set yet. */
+function backfillProductImages(db: Database.Database) {
+  const update = db.prepare("UPDATE products SET image = ? WHERE slug = ? AND image = ''")
+  for (const [slug, image] of Object.entries(PRODUCT_IMAGES)) update.run(image, slug)
 }
 
 function seed(db: Database.Database) {
@@ -260,6 +291,7 @@ function seed(db: Database.Database) {
   for (const [name, slug, category, description, price, stock] of PRODUCT_SEED) {
     insertProduct.run(name, slug, category, description, price, stock)
   }
+  backfillProductImages(db)
 
   const insertService = db.prepare(
     "INSERT INTO services (name, slug, description, base_price_cents) VALUES (?, ?, ?, ?)",

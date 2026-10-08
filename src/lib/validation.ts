@@ -60,6 +60,15 @@ export const productSchema = z.object({
     .transform((v) => parsePeso(v) as number),
   stock: z.coerce.number().int().min(0, "Stock can't be negative.").max(1_000_000),
   active: z.coerce.number().int().min(0).max(1).default(1),
+  image: z
+    .string()
+    .trim()
+    .max(300)
+    .refine(
+      (v) => v === "" || v.startsWith("/") || v.startsWith("https://"),
+      "Use a path like /products/bone-toy.svg or an https:// image URL",
+    )
+    .default(""),
 })
 
 export type FieldErrors = Record<string, string>
