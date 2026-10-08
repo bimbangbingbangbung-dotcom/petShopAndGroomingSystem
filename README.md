@@ -8,6 +8,9 @@ accessories **and** takes grooming bookings. All prices are in Philippine peso
 
 **Customer**
 - Browse products by category, search, and view names, prices and stock
+- Product pictures on every card, the detail page, cart and checkout review —
+  twelve bundled illustrations plus a tidy category placeholder for items
+  without one
 - Cart with quantity selection, order review and live total
 - Checkout with payment method (card / e-wallet / cash on delivery), an order
   number, and a printable receipt
@@ -19,7 +22,8 @@ accessories **and** takes grooming bookings. All prices are in Philippine peso
 
 **Admin** (`/admin`)
 - Dashboard: revenue today/month, open orders, bookings, low stock, customers
-- Item management (create, edit, hide/restore) with stock and category
+- Item management (create, edit, hide/restore) with stock, category and an
+  optional picture (path like `/products/bone-toy.svg` or an https:// URL)
 - Order management with legal status transitions (cancel restocks automatically)
 - Booking management for grooming (confirm, complete, cancel)
 - Transaction history for both shop and grooming, filterable by kind and date
