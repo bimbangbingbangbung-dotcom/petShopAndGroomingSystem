@@ -7,6 +7,8 @@ export interface CartLine {
   name: string
   priceCents: number
   quantity: number
+  /** Optional picture path carried from the product card for cart thumbnails. */
+  image?: string
 }
 
 const KEY = "pc_cart_v1"
@@ -36,11 +38,18 @@ function writeCart(lines: CartLine[]): void {
   window.dispatchEvent(new Event(EVENT))
 }
 
-export function addToCart(line: { productId: number; name: string; priceCents: number; quantity?: number }): void {
+export function addToCart(line: {
+  productId: number
+  name: string
+  priceCents: number
+  quantity?: number
+  image?: string
+}): void {
   const lines = readCart()
   const existing = lines.find((l) => l.productId === line.productId)
   if (existing) {
     existing.quantity = Math.min(99, existing.quantity + (line.quantity ?? 1))
+    if (line.image) existing.image = line.image
   } else {
     lines.push({ ...line, quantity: Math.min(99, line.quantity ?? 1) })
   }

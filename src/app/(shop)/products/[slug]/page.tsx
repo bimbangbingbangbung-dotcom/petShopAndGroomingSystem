@@ -69,7 +69,12 @@ export default async function ProductPage({ params }: Props) {
           </p>
           <div className="mt-5">
             <AddToCart
-              product={{ id: product.id, name: product.name, price_cents: product.price_cents }}
+              product={{
+                id: product.id,
+                name: product.name,
+                price_cents: product.price_cents,
+                image: product.image,
+              }}
               stock={product.stock}
               showQuantity
             />

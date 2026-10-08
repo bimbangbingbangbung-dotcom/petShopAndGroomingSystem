@@ -5,7 +5,7 @@ import { addToCart, setQuantity as setStoredQuantity } from "@/lib/cart-client"
 import { MinusIcon, PlusIcon } from "@/components/icons"
 
 interface Props {
-  product: { id: number; name: string; price_cents: number }
+  product: { id: number; name: string; price_cents: number; image?: string }
   stock: number
   showQuantity?: boolean
 }
@@ -25,7 +25,13 @@ export function AddToCart({ product, stock, showQuantity = true }: Props) {
 
   const add = () => {
     startTransition(() => {
-      addToCart({ productId: product.id, name: product.name, priceCents: product.price_cents, quantity })
+      addToCart({
+        productId: product.id,
+        name: product.name,
+        priceCents: product.price_cents,
+        quantity,
+        image: product.image,
+      })
       setStoredQuantity(product.id, quantity)
       setAdded(true)
     })
