@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 240" role="img">
+  <title>Bag of salmon cat kibble with food pile</title>
+  <rect width="320" height="240" fill="#EFF3F0"/>
+  <ellipse cx="160" cy="196" rx="92" ry="8" fill="#0E4D3C" opacity=".06"/>
+  <rect x="70" y="62" width="180" height="20" rx="6" fill="#08342A"/>
+  <rect x="76" y="76" width="168" height="108" rx="10" fill="#0E4D3C"/>
+  <rect x="76" y="118" width="168" height="42" fill="#F2A104"/>
+  <ellipse cx="148" cy="139" rx="21" ry="12" fill="#0E4D3C"/>
+  <path d="M169 139l16-11v22z" fill="#0E4D3C"/>
+  <circle cx="140" cy="135" r="2.5" fill="#F2A104"/>
+  <circle cx="104" cy="192" r="8" fill="#C98400"/>
+  <circle cx="122" cy="197" r="7" fill="#C98400"/>
+  <circle cx="138" cy="190" r="7" fill="#C98400"/>
+  <circle cx="152" cy="198" r="7" fill="#C98400"/>
+  <circle cx="168" cy="192" r="7" fill="#C98400"/>
+  <circle cx="186" cy="197" r="7" fill="#C98400"/>
+  <circle cx="204" cy="191" r="8" fill="#C98400"/>
+  <circle cx="220" cy="196" r="7" fill="#C98400"/>
+</svg>
